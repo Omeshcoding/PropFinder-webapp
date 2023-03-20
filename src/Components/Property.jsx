@@ -10,6 +10,7 @@ import DefaultImage from '../assets/images/bali.jpg';
 
 const Property = ({
   property: {
+    purpose,
     coverPhoto,
     price,
     rentFrequency,
@@ -22,7 +23,7 @@ const Property = ({
     externalID,
   },
 }) => (
-  <Link href={`/property/${externalID}`} passHref>
+  <Link href={`/property/${externalID}`} passHref loading="lazy">
     <Flex
       flexWrap="wrap"
       w="420px"
@@ -30,7 +31,23 @@ const Property = ({
       paddingTop="0"
       justifyContent="flex-start"
       cursor="pointer"
+      position="relative"
+      overflow="hidden"
     >
+      <Text
+        backgroundColor="orange.400"
+        w="20"
+        p="2"
+        textAlign="end"
+        borderRadius="10px"
+        position="absolute"
+        zIndex="10"
+        left="-2"
+        color="white"
+        fontSize="xl"
+      >
+        {purpose === 'for-sale' ? 'Sale' : 'Rent'}
+      </Text>
       <AspectRatio w="full" h="300px">
         <Image
           width={400}
@@ -63,15 +80,15 @@ const Property = ({
         <Flex
           alignItems="center"
           p="1"
-          justifyContent="space-between"
+          justifyContent="space-around"
           w="250px"
           color="blue.400"
         >
-          {rooms} <FaBath /> | {baths} <FaBath />| {millify(area)} sqft{' '}
+          {rooms} <FaBed /> | {baths} <FaBath />| {millify(area)} sqft{' '}
           <BsGridFill />
         </Flex>
         <Text fontSize="lg">
-          {title.length > 30 ? `${title.substring(0, 30)}...` : title}
+          {title.length > 40 ? `${title.substring(0, 40)}...` : title}
         </Text>
       </Box>
     </Flex>
