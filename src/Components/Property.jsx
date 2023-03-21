@@ -6,7 +6,7 @@ import { FaBed, FaBath } from 'react-icons/fa';
 import { BsGridFill } from 'react-icons/bs';
 import { GoVerified } from 'react-icons/go';
 import millify from 'millify';
-import DefaultImage from '../assets/images/bali.jpg';
+import DefaultImage from '../assets/images/Bali.jpg';
 
 const Property = ({
   property: {
