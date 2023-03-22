@@ -9,6 +9,6 @@ export const Footer = () => (
     borderTop="1px"
     borderColor="gray.400"
   >
-    2023 Realtor, Inc
+    2023 PropFinder, Inc
   </Box>
 );

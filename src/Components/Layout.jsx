@@ -9,11 +9,13 @@ const Layout = ({ children }) => {
       <Head>
         <title>PropFinder</title>
       </Head>
-      <Box maxWidth="1280px" m="auto">
+      <Box w="full" m="auto">
         <header>
           <Navbar />
         </header>
-        <main>{children}</main>
+        <main w="1200px" className="mx-auto">
+          {children}
+        </main>
         <footer>
           <Footer />
         </footer>

@@ -14,9 +14,15 @@ import { BsSearch } from 'react-icons/bs';
 import { FiKey } from 'react-icons/fi';
 
 const Navbar = () => (
-  <Flex p="2" borderBottom="1px" borderColor="gray.400">
+  <Flex
+    borderBottom="1px"
+    borderColor="gray.400"
+    className="bg-[#f1f1ed] px-4 py-2"
+  >
     <Box fontSize="3xl" color="blue.400" fontWeight="bold">
-      <Link href="/">PropFinder</Link>
+      <Link href="/" className="text-[#718079]">
+        PropFinder
+      </Link>
     </Box>
     <Spacer />
     <Box>
