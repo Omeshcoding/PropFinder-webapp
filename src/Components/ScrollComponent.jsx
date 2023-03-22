@@ -21,7 +21,11 @@ const ScrollComponent = ({ data }) => {
         className="w-[100%] bg-gray-200"
       >
         {data.map((image) => (
-          <SwiperSlide className="w-[1200px] overflow-hidden snap-x">
+          <SwiperSlide
+            key={image.id}
+            itemID={image.id}
+            className="w-[1200px] overflow-hidden snap-x"
+          >
             <Image
               placeholder="blur"
               blurDataURL={image.url}
