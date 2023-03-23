@@ -17,7 +17,7 @@ const Navbar = () => (
   <Flex
     borderBottom="1px"
     borderColor="gray.400"
-    className="bg-[#f1f1ed] px-4 py-2"
+    className="bg-[#f1f1ed] px-6 py-5"
   >
     <Box fontSize="3xl" color="blue.400" fontWeight="bold">
       <Link href="/" className="text-[#718079]">
@@ -33,7 +33,7 @@ const Navbar = () => (
           variant="outlined"
           color="red.400"
         />
-        <MenuList>
+        <MenuList zIndex="100">
           <Link href="/" passHref>
             <MenuItem icon={<FcHome />}> Home</MenuItem>
           </Link>

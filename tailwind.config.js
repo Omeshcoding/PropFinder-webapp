@@ -9,7 +9,17 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        fade: 'fadeOut 5s ease-in-out',
+      },
+      keyframes: (theme) => ({
+        fadeOut: {
+          '0%': { opacity: 1 },
+          '100%': { opacity: 0 },
+        },
+      }),
+    },
   },
   plugins: [],
 };
