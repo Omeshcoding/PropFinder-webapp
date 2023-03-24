@@ -3,7 +3,8 @@ import { Flex, Box, Text, Button } from '@chakra-ui/react';
 import Link from 'next/link';
 
 const HeroSection = ({
-  imageUrl,
+  imageUrl1,
+  imageUrl2,
   title1,
   title2,
   buttonText,
@@ -20,23 +21,42 @@ const HeroSection = ({
         flexWrap="wrap"
         justifyContent="center"
         alignItems="center"
+        className="relative"
         // marginBottom="24"
       >
-        <Box className="w-full h-[90vh]">
-          <img src={imageUrl} alt="banner" className="w-full bg-cover" />
+        <Box className="relative w-full h-[100vh]">
+          <Box className="w-full bg-black  h-full z-60 absolute opacity-30 " />
+          <img
+            src={imageUrl1}
+            alt="banner"
+            className=" w-full h-full lg:h-full bg-cover bg-center hidden lg:block"
+          />
+          <img
+            src={imageUrl2}
+            alt="banner"
+            className=" w-full h-full lg:h-full bg-cover bg-center block lg:hidden"
+          />
         </Box>
-        <Box className="w-full bg-black opacity-50 h-full z-20 absolute" />
-
-        <Box p="5" className="absolute text-white z-30 bottom-16 left-40">
-          <Text color="gray.100" fontSize="md" fontWeight="medium">
-            {purpose}
-          </Text>
-          <Text fontSize="5xl" fontWeight="semi-bold">
-            {title1} <br /> {title2}
-          </Text>
-          <Text fontSize="lg" paddingTop="3" paddingBottom="3" color="gray.100">
-            {desc1} <br /> {desc2}
-          </Text>
+        <Box
+          p="5"
+          className="absolute   lg:bottom-46 lg:left-40 text-center lg:text-left"
+        >
+          <Box className="z-50  text-white ">
+            <Text color="gray.100" fontSize="md" fontWeight="medium">
+              {purpose}
+            </Text>
+            <Text fontSize="5xl" fontWeight="bold">
+              {title1} <br /> {title2}
+            </Text>
+            <Text
+              fontSize="lg"
+              paddingTop="3"
+              paddingBottom="3"
+              color="gray.100"
+            >
+              {desc1} <br /> {desc2}
+            </Text>
+          </Box>
           <Button
             fontSize="xl"
             bg="green.400"
