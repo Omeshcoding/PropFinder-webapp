@@ -17,7 +17,7 @@ const Navbar = () => (
   <Flex
     borderBottom="1px"
     borderColor="gray.400"
-    className="bg-[#f1f1ed] px-6 py-5"
+    className="bg-[#f1f1ed] px-6 py-5 z-50"
   >
     <Box fontSize="3xl" color="blue.400" fontWeight="bold">
       <Link href="/" className="text-[#718079]">

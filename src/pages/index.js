@@ -10,30 +10,21 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Autoplay, Pagination, Navigation } from 'swiper';
+import {} from 'swiper';
+import {} from 'swiper';
+import { EffectFade, Autoplay, Pagination, Navigation } from 'swiper';
 
 export default function Home({ propertyForSale, propertyForRent }) {
   // console.log(propertyForRent, propertyForSale);
 
   return (
     <Box>
-      <Swiper
-        spaceBetween={30}
-        centeredSlides={true}
-        pagination={{
-          clickable: true,
-        }}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        navigation={true}
-        modules={[Pagination, Navigation]}
-        className="w-[100%] bg-gray-200 "
-      >
+      <Box className="w-[100%] bg-gray-200 ">
         {bannerData.map((data) => {
           const {
-            imageUrl,
+            id,
+            imageUrl1,
+            imageUrl2,
             title1,
             title2,
             buttonText,
@@ -43,21 +34,21 @@ export default function Home({ propertyForSale, propertyForRent }) {
             desc2,
           } = data;
           return (
-            <SwiperSlide>
-              <Banner
-                purpose={purpose}
-                title1={title1}
-                title2={title2}
-                desc1={desc1}
-                desc2={desc2}
-                buttonText={buttonText}
-                linkName={linkName}
-                imageUrl={imageUrl}
-              />
-            </SwiperSlide>
+            <Banner
+              key={id}
+              purpose={purpose}
+              title1={title1}
+              title2={title2}
+              desc1={desc1}
+              desc2={desc2}
+              buttonText={buttonText}
+              linkName={linkName}
+              imageUrl1={imageUrl1}
+              imageUrl2={imageUrl2}
+            />
           );
         })}
-      </Swiper>
+      </Box>
       {/* <Banner data={data} key={data.id} /> */}
       <Flex flexWrap="wrap" justifyContent="center" marginTop="24">
         {propertyForRent.map((property) => (
