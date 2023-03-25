@@ -54,12 +54,19 @@ const SearchFilters = () => {
   }, [searchTerm]);
 
   return (
-    <Flex bg="gray.100" p="4" justifyContent="center" flexWrap="wrap">
+    <Flex
+      bg="gray.100"
+      p="4"
+      justifyContent="center"
+      flexWrap="wrap"
+      className=""
+    >
       {filters.map((filter) => (
-        <Box key={filter.queryName}>
+        <Box key={filter.queryName} className="mr-4 mt-2">
           <Select
             placeholder={filter.placeholder}
             w="fit-content"
+            className="outline-green-400 bg-[#718079]"
             onChange={(e) =>
               searchProperties({ [filter.queryName]: e.target.value })
             }

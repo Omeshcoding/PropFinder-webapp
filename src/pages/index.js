@@ -6,17 +6,8 @@ import { baseUrl, fetchApi } from '../../utils/fetchApi';
 import Property from '@/Components/Property';
 import bannerData from '../../utils/bannerData';
 import Banner from '../Components/Banner';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import {} from 'swiper';
-import {} from 'swiper';
-import { EffectFade, Autoplay, Pagination, Navigation } from 'swiper';
 
 export default function Home({ propertyForSale, propertyForRent }) {
-  // console.log(propertyForRent, propertyForSale);
-
   return (
     <Box>
       <Box className="w-[100%] bg-gray-200 ">
@@ -49,28 +40,48 @@ export default function Home({ propertyForSale, propertyForRent }) {
           );
         })}
       </Box>
-      {/* <Banner data={data} key={data.id} /> */}
-      <Flex flexWrap="wrap" justifyContent="center" marginTop="24">
-        {propertyForRent.map((property) => (
-          <Property property={property} key={property.id} />
-        ))}
-      </Flex>
 
-      <Flex flexWrap="wrap" justifyContent="center">
-        {propertyForSale.map((property) => (
-          <Property property={property} key={property.id} />
-        ))}
-      </Flex>
+      <Box marginTop="24" className="text-center lg:text-left mx-8">
+        <Text
+          fontSize="3xl"
+          fontWeight="semibold"
+          marginBottom="6"
+          className="text-[#1b1a1a] lg:ml-32"
+        >
+          Properties for Rent
+        </Text>
+        <Flex flexWrap="wrap" justifyContent="center">
+          {propertyForRent.map((property) => (
+            <Property property={property} key={property.id} />
+          ))}
+        </Flex>
+      </Box>
+      <Box marginTop="14" className="text-center lg:text-left">
+        <Text
+          fontSize="3xl"
+          fontWeight="semibold"
+          marginBottom="6"
+          className="text-[#1b1a1a] lg:ml-32"
+        >
+          Properties for Sale
+        </Text>
+
+        <Flex flexWrap="wrap" justifyContent="center">
+          {propertyForSale.map((property) => (
+            <Property property={property} key={property.id} />
+          ))}
+        </Flex>
+      </Box>
     </Box>
   );
 }
 
 export async function getStaticProps() {
   const propertyForSale = await fetchApi(
-    `${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=6`
+    `${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=3`
   );
   const propertyForRent = await fetchApi(
-    `${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=6`
+    `${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=3`
   );
   return {
     props: {
