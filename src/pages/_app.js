@@ -6,6 +6,7 @@ import Router from 'next/router';
 
 import Layout from '../Components/Layout';
 import '../styles/globals.css';
+import theme from '@/styles/chakraUi';
 export default function App({ Component, pageProps }) {
   NProgress.configure({ showSpinner: false });
 
@@ -27,7 +28,7 @@ export default function App({ Component, pageProps }) {
           referrerPolicy="no-referrer"
         />
       </Head>
-      <ChakraProvider>
+      <ChakraProvider theme={theme}>
         <Layout>
           <Component {...pageProps} />
         </Layout>

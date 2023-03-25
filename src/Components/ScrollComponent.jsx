@@ -24,7 +24,7 @@ const ScrollComponent = ({ data }) => {
           <SwiperSlide
             key={image.id}
             itemID={image.id}
-            className="w-[1200px] overflow-hidden snap-x"
+            className="w-[1200px] overflow-hidden snap-x "
           >
             <Image
               placeholder="blur"

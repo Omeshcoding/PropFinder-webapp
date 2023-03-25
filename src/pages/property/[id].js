@@ -26,11 +26,10 @@ const PropertyDetails = ({
     photos,
   },
 }) => {
-  console.log(amenities);
   return (
-    <Box maxWidth="1000px" margin="auto" p="4">
+    <Box maxWidth="1000px" margin="auto" p="4" className="drop-shadow-m">
       {photos && <ScrollComponent data={photos} />}
-      <Box w="full" p="6">
+      <Box w="full" p="6" className="bg-zinc-300">
         <Flex alignItems="center" paddingTop="2" justifyContent="space-between">
           <Flex alignItems="center">
             <Box paddingRight="3" color="green.400">
@@ -55,7 +54,7 @@ const PropertyDetails = ({
           p="1"
           justifyContent="space-around"
           w="250px"
-          color="blue.400"
+          color="orange.500"
         >
           {rooms} <FaBed /> | {baths} <FaBath />| {millify(area)} sqft{' '}
           <BsGridFill />
@@ -76,6 +75,9 @@ const PropertyDetails = ({
           borderBotton="1px"
           borderColor="gray.100"
           p="3"
+          bg="blackAlpha.900"
+          color="gray.200"
+          className="my-10"
         >
           <Flex
             w="400px"
@@ -132,7 +134,7 @@ const PropertyDetails = ({
                 bg="gray.200"
                 borderRadius="5"
                 m="1"
-                color="blue.400"
+                color="orange.500"
               >
                 {aminity.text}
               </Text>

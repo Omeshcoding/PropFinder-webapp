@@ -25,12 +25,17 @@ const Search = ({ properties }) => {
         alignItems="center"
         onClick={() => setSearchFilters((prevFilters) => !prevFilters)}
       >
-        <Text>Search Property By Filters</Text>
+        <Text className="text-2xl font-bold">Search Property By Filters</Text>
         <Icon paddingLeft="2" w="7" as={BsFilter}></Icon>
       </Flex>
       {searchFilters && <SearchFilters />}
-      <Text fontSize="4xl" m="8" fontWeight="bold">
-        Properties {router.query.purpose}
+      <Text
+        fontSize="4xl"
+        fontWeight="bold"
+        textTransform="capitalize"
+        className="text-[#718079] ml-36 my-8 underline"
+      >
+        {router.query.purpose}
       </Text>
       <Flex flexWrap="wrap" justifyContent="center">
         {properties.map((property) => (
