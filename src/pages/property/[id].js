@@ -26,6 +26,7 @@ const PropertyDetails = ({
     photos,
   },
 }) => {
+  // console.log(amenities.length);
   return (
     <Box maxWidth="1000px" margin="auto" p="4" className="drop-shadow-m">
       {photos && <ScrollComponent data={photos} />}
@@ -72,7 +73,7 @@ const PropertyDetails = ({
           flexWrap="wrap"
           textTransform="uppercase"
           justifyContent="space-between"
-          borderBotton="1px"
+          borderBottom="1px"
           borderColor="gray.100"
           p="3"
           bg="blackAlpha.900"
@@ -84,7 +85,7 @@ const PropertyDetails = ({
             flexWrap="wrap"
             textTransform="uppercase"
             justifyContent="space-between"
-            borderBotton="1px"
+            borderBottom="1px"
             borderColor="gray.100"
             p="3"
           >
@@ -96,7 +97,7 @@ const PropertyDetails = ({
             flexWrap="wrap"
             textTransform="uppercase"
             justifyContent="space-between"
-            borderBotton="1px"
+            borderBottom="1px"
             borderColor="gray.100"
             p="3"
           >
@@ -109,7 +110,7 @@ const PropertyDetails = ({
               flexWrap="wrap"
               textTransform="uppercase"
               justifyContent="space-between"
-              borderBotton="1px"
+              borderBottom="1px"
               borderColor="gray.100"
               p="3"
             >
@@ -124,7 +125,10 @@ const PropertyDetails = ({
               Amenities
             </Text>
           )}
-          <Flex flexWrap="wrap">
+          <Flex
+            flexWrap="wrap"
+            className={amenities.length === 0 ? 'hidden' : 'block'}
+          >
             {amenities.map((aminity) => (
               <Text
                 key={aminity.text}

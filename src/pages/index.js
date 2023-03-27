@@ -42,14 +42,28 @@ export default function Home({ propertyForSale, propertyForRent }) {
       </Box>
 
       <Box marginTop="24" className="text-center lg:text-left mx-8">
-        <Text
-          fontSize="3xl"
-          fontWeight="semibold"
-          marginBottom="6"
-          className="text-[#1b1a1a] lg:ml-32"
-        >
-          Properties for Rent
-        </Text>
+        <Flex justifyContent="space-between" className="lg:mx-32 mb-6">
+          <Text
+            // fontSize="3xl"
+            fontWeight="semibold"
+            marginBottom="6"
+            className="text-[#1b1a1a] text-2xl lg:text-4xl"
+          >
+            Properties for <span className="text-red-500 underline"> Rent</span>
+          </Text>
+
+          <Link
+            href="/search?purpose=for-rent"
+            passHref
+            fontSize="xl"
+            fontWeight="semibold"
+            marginBottom="6"
+            className="text-gray-500 underline"
+          >
+            See All
+          </Link>
+        </Flex>
+
         <Flex flexWrap="wrap" justifyContent="center">
           {propertyForRent.map((property) => (
             <Property property={property} key={property.id} />
@@ -57,14 +71,26 @@ export default function Home({ propertyForSale, propertyForRent }) {
         </Flex>
       </Box>
       <Box marginTop="14" className="text-center lg:text-left">
-        <Text
-          fontSize="3xl"
-          fontWeight="semibold"
-          marginBottom="6"
-          className="text-[#1b1a1a] lg:ml-32"
-        >
-          Properties for Sale
-        </Text>
+        <Flex justifyContent="space-between" className="lg:mx-36 mx-0 mb-6">
+          <Text
+            // fontSize="3xl"
+            fontWeight="semibold"
+            marginBottom="6"
+            className="text-[#1b1a1a] text-2xl lg:text-4xl"
+          >
+            Properties for <span className="text-red-500 underline"> Sale</span>
+          </Text>
+
+          <Link
+            href="/search?purpose=for-rent"
+            passHref
+            fontSize="xl"
+            fontWeight="semibold"
+            className="text-gray-500 underline"
+          >
+            See All
+          </Link>
+        </Flex>
 
         <Flex flexWrap="wrap" justifyContent="center">
           {propertyForSale.map((property) => (
