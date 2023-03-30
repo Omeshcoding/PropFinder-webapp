@@ -1,6 +1,6 @@
 # PROPFINDER (A Real-Estate App)
 
-# A app to find the property and rent a property in UAE
+#### A app to sell and rent  property in UAE built with Rapid Api [Bayut](https://rapidapi.com/apidojo/api/bayut)
 
 ![](./PropFinder.png)
 
