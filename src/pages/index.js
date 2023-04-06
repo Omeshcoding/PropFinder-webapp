@@ -82,7 +82,7 @@ export default function Home({ propertyForSale, propertyForRent }) {
           </Text>
 
           <Link
-            href="/search?purpose=for-rent"
+            href="/search?purpose=for-sale"
             passHref
             fontSize="xl"
             fontWeight="semibold"
